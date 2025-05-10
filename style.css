@@ -14,30 +14,40 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
-/* Navbar */
 .navbar {
   position: absolute;
   top: 20px;
   width: 100%;
-  text-align: center;
   z-index: 2;
+  display: flex;
+  justify-content: center;
 }
+
 .navbar ul {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 2em;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.75em 2em;
+  border-radius: 10px;
 }
+
+.navbar li {
+  display: inline;
+}
+
 .navbar a {
   text-decoration: none;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1rem;
   transition: color 0.3s ease;
 }
+
 .navbar a:hover {
   color: #ffd700;
 }
+
 
 /* Hero section with background */
 .hero-section {
