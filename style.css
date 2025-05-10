@@ -1,4 +1,4 @@
-/* Reset & basics */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,56 +7,85 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(145deg, #f0f4f8, #d9e2ec);
   color: #2a2a2a;
+  background: #f0f4f8;
   text-align: center;
-  padding: 2em 1em;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-header {
-  padding: 2em 1em;
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.navbar a:hover {
+  color: #ffd700;
+}
+
+/* Hero section with background */
+.hero-section {
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 5em 1em 3em;
+  position: relative;
+  color: white;
 }
 
 .profile-container {
   max-width: 600px;
   margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 2em;
+  margin-top: 3em;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .profile-img {
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #0077cc;
   margin-bottom: 1em;
-  transition: transform 0.3s ease;
-}
-.profile-img:hover {
-  transform: scale(1.05);
 }
 
 .name {
-  font-size: 2.2em;
+  font-size: 2em;
   color: #0077cc;
   margin-bottom: 0.3em;
 }
 
 .description {
   font-size: 1.1em;
-  color: #444;
-  margin-bottom: 2em;
+  color: #333;
 }
 
-/* Links section */
+/* Links */
 .links-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1em;
   max-width: 800px;
-  margin: auto;
+  margin: 2em auto;
   padding: 1em;
 }
 
