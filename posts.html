@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Public Posts</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Leave a Message</h1>
+    <form id="post-form">
+      <textarea id="post-text" rows="4" cols="50" placeholder="Your message..."></textarea><br/>
+      <button type="submit">Post</button>
+    </form>
+    <h2>Messages:</h2>
+    <ul id="posts-list"></ul>
+  </div>
+</body>
+</html>
+
