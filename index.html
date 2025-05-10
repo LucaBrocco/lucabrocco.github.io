@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,35 +7,112 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header class="hero-section">
     <nav class="navbar">
       <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="posts.html" data-i18n="ripetizioni_link">Ripetizioni</a></li>
         <li><a href="https://github.com/LucaBrocco">GitHub</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="posts.html">Message Board</a></li>
+        <li><a href="https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO" data-i18n="libro">Il mio libro</a></li>
+        <li><a href="https://instagram.com/lucabroccoo">Instagram</a></li>
       </ul>
     </nav>
+    <!-- Language Switcher Box -->
+<div class="lang-switch-box">
+  <div class="lang-switch">
+    <label class="switch">
+      <input type="checkbox" id="lang-toggle" onchange="toggleLanguage(this)">
+      <span class="slider"></span>
+    </label>
+    <span id="lang-label">IT</span>
+  </div>
+</div>
+      
+    
 
     <div class="profile-container">
       <img src="profile.jpg" alt="Luca Brocco" class="profile-img" />
-      <h1 class="name">Luca Brocco</h1>
-      <p class="description">Creative thinker, builder, explorer. Welcome to my digital corner.</p>
+      <h1 class="name" data-i18n="titolo">Luca Brocco</h1>
+      <p class="description" data-i18n="descrizione">Benvenut* nella mia home page! Qui potrai trovare informazioni su tutto quello che mi riguarda!</p>
     </div>
   </header>
+  <section class="achievements">
+  <h2 data-i18n="attività_presente">Attività (presente):</h2>
+  <p class="subtitle_top" data-i18n="attività_sub">Clicca su un attività per avere maggiori informazioni</p>
+  <ul>
+    <li class="achievement">
+    <a href="posts.html">
+      <div class="title" data-i18n="ripetizioni">(2019-) Ripetizioni di matematica e fisica</div>
+      <div class="subtitle" data-i18n="ripetizioni_info">Dal 2019 dò ripetizioni di matematica e fisica a ragazzi e ragazze di scuole superiori e università</div>
+      </a>
+    </li>
+    <li class="achievement">
+    <a href="pod.html">
+      <div class="title" data-i18n="pod"></div>
+      <div class="subtitle" data-i18n="pod_info"></div>
+    </a>
+    </li>
+    <li class="achievement">
+      <div class="title" data-i18n="volontariato"></div>
+      <div class="subtitle" data-i18n="volontariato_info"></div>
+    </li>
+    <li class="achievement">
+    <a href="https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO">
+      <div class="title" data-i18n="libro_a"></div>
+      <div class="subtitle" data-i18n="libro_info"></div>
+    </a>
+    </li>
+  </ul>
+</section>
 
-  <main>
+<!-- PAST ACTIVITIES -->
+
+<section class="achievements">
+  <h2 data-i18n="past_act_title">Attività (passate):</h2>
+  <ul>
+    <li class="achievement">
+      <div class="title" data-i18n="laurea_fisica"></div>
+      <div class="subtitle" data-i18n="laurea_fisica_info"></div>
+    </li>
+    <li class="achievement">
+      <div class="title" data-i18n="insegnamento"></div>
+      <div class="subtitle" data-i18n="insegnamento_info"></div>
+    </li>
+  </ul>
+</section>
+
     <section class="links-section">
-      <a href="https://github.com/LucaBrocco" class="link-card">GitHub</a>
-      <a href="#" class="link-card">Project 1</a>
-      <a href="#" class="link-card">Project 2</a>
-      <a href="posts.html" class="link-card">Public Message Board</a>
+      <h2 class="links-title" data-i18n="links"></h2>
+      <div class="links-container">
+        <a href="https://github.com/LucaBrocco" class="link-card">GitHub</a>
+      </div>
     </section>
+  
   </main>
 
   <footer>
-    <p>&copy; 2025 Luca Brocco</p>
+    <p>&copy; 2025 Luca Brocco - lucabrocco31@gmail.com - +39 3703300427</p>
   </footer>
 </body>
 </html>
+
+<script src="lang.js"></script>
+<script>
+  let currentLang = 'it';
+  function toggleLanguage(switchElem) {
+    currentLang = switchElem.checked ? 'en' : 'it';
+    document.getElementById('lang-label').textContent = currentLang.toUpperCase();
+    applyTranslations(currentLang);
+    localStorage.setItem('lang', currentLang); // persist language across pages
+  }
+
+  // Load language on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem('lang') || 'it';
+    currentLang = savedLang;
+    document.getElementById('lang-toggle').checked = savedLang === 'en';
+    document.getElementById('lang-label').textContent = savedLang.toUpperCase();
+    applyTranslations(savedLang);
+  });
+</script>
 

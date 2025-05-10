@@ -1,13 +1,10 @@
-// Firebase config
 <script type="module">
-  // Import the functions you need from the SDKs you need
+  // Import the functions you need from the Firebase SDK
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, orderBy, query } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyAgvx2ETTN__Vwyrr0SLZlMvI7wf5AcJ9g",
     authDomain: "my-website-a33ec.firebaseapp.com",
@@ -21,36 +18,51 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
-</script>
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+  // Initialize Firestore
+  const db = getFirestore(app);
 
-const form = document.getElementById('post-form');
-const textarea = document.getElementById('post-text');
-const postsList = document.getElementById('posts-list');
+  // Get the HTML elements
+  const postForm = document.getElementById('post-form');
+  const postText = document.getElementById('post-text');
+  const postsList = document.getElementById('posts-list');
 
-// Submit post
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const text = textarea.value.trim();
-  if (text) {
-    await db.collection('posts').add({ text, created: new Date() });
-    textarea.value = '';
-    loadPosts();
-  }
-});
-
-// Load posts
-async function loadPosts() {
-  postsList.innerHTML = '';
-  const snapshot = await db.collection('posts').orderBy('created', 'desc').get();
-  snapshot.forEach(doc => {
-    const li = document.createElement('li');
-    li.textContent = doc.data().text;
-    postsList.appendChild(li);
+  // Event listener for form submission
+  postForm.addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent the form from submitting in the default way
+    
+    const message = postText.value.trim();
+    
+    if (message) {
+      // Save the new post to Firestore
+      await addDoc(collection(db, 'posts'), {
+        text: message,
+        timestamp: new Date(),
+      });
+      
+      // Clear the form and refresh the posts list
+      postText.value = '';
+      loadPosts();
+    }
   });
-}
 
-loadPosts();
+  // Function to load posts from Firestore
+  async function loadPosts() {
+    const postsRef = collection(db, 'posts');
+    const q = query(postsRef, orderBy('timestamp', 'desc'));
+    const snapshot = await getDocs(q);
+
+    postsList.innerHTML = ''; // Clear the current list
+
+    snapshot.forEach(doc => {
+      const post = doc.data();
+      const postItem = document.createElement('li');
+      postItem.innerHTML = `<p>${post.text}</p>`;
+      postsList.appendChild(postItem);
+    });
+  }
+
+  // Initial load of posts when the page is loaded
+  loadPosts();
+</script>
 

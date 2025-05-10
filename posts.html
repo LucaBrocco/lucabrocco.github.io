@@ -1,24 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Public Posts</title>
+  <title>Luca Brocco's homepage</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>
-  <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Leave a Message</h1>
-    <form id="post-form">
-      <textarea id="post-text" rows="4" cols="50" placeholder="Your message..."></textarea><br/>
-      <button type="submit">Post</button>
-    </form>
-    <h2>Messages:</h2>
-    <ul id="posts-list"></ul>
+
+  <header class="hero-section">
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://github.com/LucaBrocco">GitHub</a></li>
+        <li><a href="book.html" data-i18n="libro">Il mio libro</a></li>
+        <li><a href="https://instagram.com/lucabroccoo">Instagram</a></li>
+      </ul>
+    </nav>
+    <!-- Language Switcher Box -->
+<div class="lang-switch-box">
+  <div class="lang-switch">
+    <label class="switch">
+      <input type="checkbox" id="lang-toggle" onchange="toggleLanguage(this)">
+      <span class="slider"></span>
+    </label>
+    <span id="lang-label">IT</span>
   </div>
+</div>
+      
+  </header>
+  <section class="achievements">
+  <h2 data-i18n="rep_tt">Ripetizioni</h2>
+  <p class="subtitle_top_post" data-i18n="rep_body"></p>
+  <p>     </p>
+  <ul style="list-style-type: square;">
+    <li class="subtitle_top_post" data-i18n="matematica">Matematica</li>
+    <li class="subtitle_top_post" data-i18n="fisica">Fisica</li>
+    <li class="subtitle_top_post" data-i18n="informatica">Informatica</li>
+    <li class="subtitle_top_post" data-i18n="chimica">Chimica</li>
+    <li class="subtitle_top_post" data-i18n="analisi">Analisi 1</li>
+    <li class="subtitle_top_post" data-i18n="fisica1">Fisica 1 - 2</li>
+    <li class="subtitle_top_post" data-i18n="algebra">Algebra lineare e geometria</li>
+  </ul>
+</section>
+
+<section class="achievements">
+<div class="achievement">
+<a href="https://padlet.com/lucabrocco31/recensioni-ripetizioni-con-luca-brocco-t84auaukfms89thw">
+
+  <h2  data-i18n="recensioni">Recensioni</h2>
+  <p class="subtitle_top_post" data-i18n="recensioni_body"></p>
+  
+  </a>
+  </div>
+</section>
+
+<!-- PAST ACTIVITIES -->
+
+<section class="achievements">
+  <h2 data-i18n="contacts_tt"></h2>
+  <p class="subtitle_top_post" data-i18n="contacts_body"></p>
+  <p>     </p>
+  <a class="link-card-2" href="mailto:lucabrocco31@gmail.com">Email</a>
+  <a class="link-card-2" href="tel:+393703300427">Chiamami</a>
+
+
+  
+</section>
+
+    
+  
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Luca Brocco - lucabrocco31@gmail.com - +39 3703300427</p>
+  </footer>
 </body>
 </html>
+
+<script src="lang.js"></script>
+<script>
+  let currentLang = 'it';
+  function toggleLanguage(switchElem) {
+    currentLang = switchElem.checked ? 'en' : 'it';
+    document.getElementById('lang-label').textContent = currentLang.toUpperCase();
+    applyTranslations(currentLang);
+    localStorage.setItem('lang', currentLang); // persist language across pages
+  }
+
+  // Load language on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem('lang') || 'it';
+    currentLang = savedLang;
+    document.getElementById('lang-toggle').checked = savedLang === 'en';
+    document.getElementById('lang-label').textContent = savedLang.toUpperCase();
+    applyTranslations(savedLang);
+  });
+</script>
 
