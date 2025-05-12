@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luca Brocco's homepage</title>
+  <link rel="stylesheet" href="style_book.css" />
+</head>
+<body>
+
+  <header class="hero-section">
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://github.com/LucaBrocco">GitHub</a></li>
+        <li><a href="posts.html" data-i18n="ripetizioni_link">Ripetizioni</a></li>
+        <li><a href="https://instagram.com/lucabroccoo">Instagram</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language Switcher Box -->
+    <div class="lang-switch-box">
+      <div class="lang-switch">
+        <label class="switch">
+          <input type="checkbox" id="lang-toggle" onchange="toggleLanguage(this)">
+          <span class="slider"></span>
+        </label>
+        <span id="lang-label">IT</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="achievements">
+      <h2 data-i18n="libro_title">Il mio libro</h2>
+      <p class="subtitle_top" data-i18n="libro_desc_1">
+        Nel 2025 ho pubblicato un libro:
+        <a href="https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO" style="text-decoration: none; color: #3B3B3B">
+          "La sottile differenza tra la spremuta e il succo d'arancia"
+        </a>.
+        È la raccolta dei racconti brevi che ho scritto negli ultimi tre anni.
+      </p>
+      <p class="subtitle_top" data-i18n="libro_desc_2">
+        <i>
+          Una raccolta di racconti brevi con un fil rouge peculiare: Luca; alter-ego narrativo e omonimo dell'autore.
+          Luca è un ragazzo di vent'anni, studia e ha un'esistenza ordinaria.
+          Vive in un collegio, gli piace la <em>pita gyros</em> e gli è capitato di uscire con più ragazze di quanto si sarebbe mai aspettato.
+          Ha avuto lavori strani, ha qualche trauma infantile, alcune teorie sui gabinetti e ogni tanto gli capitano fenomeni paranormali.
+          Il suo modo di vedere le cose, ironico e romantico allo stesso tempo, gli permette di cogliere il bello dei momenti più semplici e di narrarli con naturalezza,
+          come se stesse raccontando a chi legge, in confidenza, quello che gli è successo l'altro ieri.
+        </i>
+      </p>
+    <p class="subtitle_top" data-i18n="libro_desc_3">Clicca sulla copertina per acquistare il libro! Oppure clicca sul video per ascoltare uno dei racconti del libro letto da me! </p>
+    </section>
+    
+    <a href="https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO" ">
+      <img src="book.png" alt="Copertina del libro" class="centered-img">
+    </a>
+    <div style="margin-top: 20px">
+      <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Alcn4afO3Ys" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    
+    <section class="links-section">
+      <h2 class="links-title" data-i18n="links">Link</h2>
+      <div class="links-container">
+        <a href="https://github.com/LucaBrocco" class="link-card">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Luca Brocco - lucabrocco31@gmail.com - +39 3703300427</p>
+  </footer>
+
+  <script src="lang.js"></script>
+  <script>
+    let currentLang = 'it';
+    function toggleLanguage(switchElem) {
+      currentLang = switchElem.checked ? 'en' : 'it';
+      document.getElementById('lang-label').textContent = currentLang.toUpperCase();
+      applyTranslations(currentLang);
+      localStorage.setItem('lang', currentLang); // persist language across pages
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem('lang') || 'it';
+      currentLang = savedLang;
+      document.getElementById('lang-toggle').checked = savedLang === 'en';
+      document.getElementById('lang-label').textContent = savedLang.toUpperCase();
+      applyTranslations(savedLang);
+    });
+  </script>
+</body>
+</html>
+

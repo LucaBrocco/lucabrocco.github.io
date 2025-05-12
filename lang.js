@@ -35,7 +35,11 @@ const translations = {
     recensioni: "Recensioni",
     recensioni_body: "Clicca qui per leggere che cosa pensano gli studenti di me!",
     contacts_tt: "Contatti",
-    contacts_body: "Puoi contattarmi per informazioni su disponibilità e orari:"
+    contacts_body: "Puoi contattarmi per informazioni su disponibilità e orari:",
+    libro_title: "Il mio libro",
+    libro_desc_2: "Una raccolta di racconti brevi con un fil rouge peculiare: Luca; alter-ego narrativo e omonimo dell'autore. Luca è un ragazzo di vent'anni, studia e ha un'esistenza ordinaria. Vive in un collegio, gli piace la <em>pita gyros</em> e gli è capitato di uscire con più ragazze di quanto si sarebbe mai aspettato. Ha avuto lavori strani, ha qualche trauma infantile, alcune teorie sui gabinetti e ogni tanto gli capitano fenomeni paranormali. Il suo modo di vedere le cose, ironico e romantico allo stesso tempo, gli permette di cogliere il bello dei momenti più semplici e di narrarli con naturalezza, come se stesse raccontando a chi legge, in confidenza, quello che gli è successo l'altro ieri.",
+    libro_desc_1: "Nel 2025 ho pubblicato un libro: <a href='https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO' style='text-decoration: none; color: #3B3B3B'>'La sottile differenza tra la spremuta e il succo d'arancia'</a>, con Montag Edizioni. È la raccolta dei racconti brevi che ho scritto negli ultimi tre anni.",
+    libro_desc_3: "Clicca sulla copertina per acquistare il libro! Oppure clicca sul video per ascoltare uno dei racconti del libro letto da me! "
   },
   en: {
     ripetizioni_link: "Tutoring",
@@ -72,7 +76,13 @@ const translations = {
     recensioni: "Reviews",
     recensioni_body: "Click here to read what other students think about me!",
     contacts_tt: "Contacts",
-    contacts_body: "You can contact me for availability and time informations:"
+    contacts_body: "You can contact me for availability and time informations:",
+    libro_title: "My book",
+    libro_desc_2: "An anthology collecting brief novels with a peculiar fil rouge: Luca; narrative alter-ego and namesake of the author. Luca is 20, studies at University and lives and ordinary existence. He lives in a college, he likes pita gyros and has had more dates than he would have ever hoped. He had weird jobs, some childhood trauma, some theories about toilets and sometimes he experiences paranormal activities. His mood of living things, at the same time ironic and romantic, lets him live them naturally, experiencing and narrating their good side, as if he was confidentially telling to the reader what happened to him yesterday.",
+    libro_desc_1: "In 2025 I published a book: <a style='text-decoration: none; color: #3B3B3B' href='https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO'>'La sottile differenza tra la spremuta e il succo d'arancia'</a>, with Montag Edizioni. It is an anthology that contains all novels I wrote in the last 3 years.",
+    libro_desc_3: "Click on the cover to buy my book! Or click on the video to listen one of the novels read by me (italian audio only)! "
+    
+    
   }
 };
 
@@ -80,8 +90,9 @@ function applyTranslations(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      el.innerHTML = translations[lang][key]; // Usa innerHTML invece di textContent
     }
   });
 }
+
 
