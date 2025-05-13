@@ -160,6 +160,15 @@ input:checked + .slider:before {
   margin-bottom: 1em;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+html {
+  scroll-padding-top: 70px;
+}
+
+
 .name {
   font-size: 2em;
   color: #21130d;
@@ -173,7 +182,7 @@ input:checked + .slider:before {
 
 /* Achievements list */
 .achievements {
-  width: 800px;
+  width: 90%;
   max-width: 1000px;
   margin: 2em auto;
   background-color: rgba(255, 255, 255, 0.8);
@@ -374,5 +383,53 @@ button:hover {
   transform: scale(1.05); /* Slight grow on hover */
   background-color: #E0E0E0;
   color: #010101;
+}
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-container {
+    width: 90%;
+    margin-top: 6em;
+    padding: 1.5em;
+  }
+
+  .achievements {
+    width: 95%;
+    padding: 1em;
+  }
+
+  .links-container {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+
+  .links-section {
+    padding: 0.5em;
+  }
+
+  .link-card, .link-card-2 {
+    padding: 1em;
+    font-size: 1rem;
+  }
+
+  #post-text {
+    width: 95%;
+  }
+
+  .subtitle_top_post {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
 

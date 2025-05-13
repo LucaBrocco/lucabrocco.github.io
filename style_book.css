@@ -293,6 +293,11 @@ footer {
   display: flex; /* Use flexbox for centering */
   justify-content: center; /* Center the content horizontally */
 }
+body {
+  padding-top: 60px; /* adjust based on navbar height */
+}
+
+
 
 /* ripetizioni, posts, page */
 
@@ -379,6 +384,6 @@ button:hover {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 55%; /* opzionale: regola la dimensione */  
+      width: 35%; /* opzionale: regola la dimensione */  
       height: auto
     }
