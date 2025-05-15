@@ -14,7 +14,7 @@ const translations = {
     pod: "(2024 - ) Physics of Data",
     pod_info: "Sono iscritto al corso LM-17 Physics of Data presso UniPd",
     volontariato: "(2022 - ) Volontariato",
-    volontariato_info: "Sono impegnato in attività di volontariato con VIDES Veneto e Collaborazione Pastorale Altinate",
+    volontariato_info: "Sono impegnato in attività di volontariato con CUAMM, VIDES Veneto e Collaborazione Pastorale Altinate",
     libro_a: "(2025 - ) Promozione del mio libro",
     libro_info: "Ho scritto 'La sottile differenza tra la spremuta e il succo d'arancia' e lo promuovo dal 2025",
     past_act_title: "Attività (passate)",
@@ -39,7 +39,24 @@ const translations = {
     libro_title: "Il mio libro",
     libro_desc_2: "Una raccolta di racconti brevi con un fil rouge peculiare: Luca; alter-ego narrativo e omonimo dell'autore. Luca è un ragazzo di vent'anni, studia e ha un'esistenza ordinaria. Vive in un collegio, gli piace la <em>pita gyros</em> e gli è capitato di uscire con più ragazze di quanto si sarebbe mai aspettato. Ha avuto lavori strani, ha qualche trauma infantile, alcune teorie sui gabinetti e ogni tanto gli capitano fenomeni paranormali. Il suo modo di vedere le cose, ironico e romantico allo stesso tempo, gli permette di cogliere il bello dei momenti più semplici e di narrarli con naturalezza, come se stesse raccontando a chi legge, in confidenza, quello che gli è successo l'altro ieri.",
     libro_desc_1: "Nel 2025 ho pubblicato un libro: <a href='https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO' style='text-decoration: none; color: #3B3B3B'>'La sottile differenza tra la spremuta e il succo d'arancia'</a>, con Montag Edizioni. È la raccolta dei racconti brevi che ho scritto negli ultimi tre anni.",
-    libro_desc_3: "Clicca sulla copertina per acquistare il libro! Oppure clicca sul video per ascoltare uno dei racconti del libro letto da me! "
+    libro_desc_3: "Clicca sulla copertina per acquistare il libro! Oppure clicca sul video per ascoltare uno dei racconti del libro letto da me! ",
+    
+    progetti_link:"Progetti",
+    progetti_titolo:"Progetti",
+    progetti_sottotitolo:"Qui potrai trovare i link diretti a tutti i progetti a cui ho lavorato o lavoro attualmente!",
+    progetto_1_titolo: "MAGIC Data Analysis",
+    progetto_1_desc: "Progetto per il corso LCP-A: analisi dati di un dataset simulato con Monte Carlo (particelle ad alta energia)",
+    progetto_2_titolo: "Restricted Boltzmann Machine",
+    progetto_2_desc: "Progetto per il corso LCP-B: utilizzo di una RBM sul MNIST dataset per il riconoscimento delle cifre",
+    progetto_3_titolo: "(WORK IN PROGRESS) ReDis Energy",
+    progetto_3_desc: "Progetto per il corso LCP-B: utilizzo delle tecniche di ML per la previsione di produzione di energia elettrica a partire dal meteo forecast",
+    progetto_4_titolo: "God doesn't play pool",
+    progetto_4_desc: "Progetto per il corso TLP: unità didattica su urti e leggi di conservazione (ENG)",
+    progetto_5_titolo: "Luca Brocco - Tesi di laurea LT-Fisica",
+    progetto_5_desc: "Caratterizzazione tramite spettroscopia ottica di un plasma a pressione atmosferica"
+    
+    
+    
   },
   en: {
     ripetizioni_link: "Tutoring",
@@ -55,7 +72,7 @@ const translations = {
     pod:"(2024 - ) Physics of Data",
     pod_info: "I am getting a Master Degree in LM-17 Physics of Data, UniPd",
     volontariato: "(2022 - ) Volunteering",
-    volontariato_info: "I am currently volunteering for VIDES Veneto and Collaborazione Pastorale Altinate",
+    volontariato_info: "I am currently volunteering for CUAMM, VIDES Veneto and Collaborazione Pastorale Altinate",
     libro_a: "(2025 - ) Promotion of my book",
     libro_info: "I wrote 'La sottile differenza tra la spremuta e il succo d'arancia' and I promote it since 2025",
     past_act_title: "Activities (past)",
@@ -80,7 +97,21 @@ const translations = {
     libro_title: "My book",
     libro_desc_2: "An anthology collecting brief novels with a peculiar fil rouge: Luca; narrative alter-ego and namesake of the author. Luca is 20, studies at University and lives and ordinary existence. He lives in a college, he likes pita gyros and has had more dates than he would have ever hoped. He had weird jobs, some childhood trauma, some theories about toilets and sometimes he experiences paranormal activities. His mood of living things, at the same time ironic and romantic, lets him live them naturally, experiencing and narrating their good side, as if he was confidentially telling to the reader what happened to him yesterday.",
     libro_desc_1: "In 2025 I published a book: <a style='text-decoration: none; color: #3B3B3B' href='https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO'>'La sottile differenza tra la spremuta e il succo d'arancia'</a>, with Montag Edizioni. It is an anthology that contains all novels I wrote in the last 3 years.",
-    libro_desc_3: "Click on the cover to buy my book! Or click on the video to listen one of the novels read by me (italian audio only)! "
+    libro_desc_3: "Click on the cover to buy my book! Or click on the video to listen one of the novels read by me (italian audio only)! ",
+    
+    progetti_link:"Projects",
+    progetti_titolo:"Projects",
+    progetti_sottotitolo:"Here you can find direct links to all projects I worked or I am currently working on!",
+    progetto_1_titolo: "MAGIC Data Analysis",
+    progetto_1_desc: "Project for LCP-A course: analysis of a Monte Carlo generated dataset for high energy particles",
+    progetto_2_titolo: "Restricted Boltzmann Machine",
+    progetto_2_desc: "Project for LCP-B course: use of a RBM on MNIST dataset for digit recognition",
+    progetto_3_titolo: "(WORK IN PROGRESS) ReDis Energy",
+    progetto_3_desc: "Project for LCP-B course: use of ML tecniques for predicting energy production from meteo forecast",
+    progetto_4_titolo: "God doesn't play pool",
+    progetto_4_desc: "Project for TLP course: a teaching unit about collisions and conservation laws",
+    progetto_5_titolo: "Luca Brocco - Thesis LT-Fisica",
+    progetto_5_desc: "Control of the kinetics of self-assembling nanostructures by atmospheric pressure plasma"
     
     
   }
