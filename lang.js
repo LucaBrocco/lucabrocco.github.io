@@ -58,10 +58,9 @@ const translations = {
     progetto_6_desc: "Progetto per il corso ASPA: analisi statistica di dati meteo ARPAV tramite linguaggio R, simulazione MCMC con JAGS e pacchetto ARIMA",
     progetto_7_titolo: "CORD-19",
     progetto_7_desc: "Progetto per il corso MAPD-B: analisi dei paper relativi a SARS-COV19 tramite cluster distribuito con Dask"
-    
-    
-    
+
   },
+  
   en: {
     ripetizioni_link: "Tutoring",
     libro: "My Book",
