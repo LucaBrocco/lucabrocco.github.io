@@ -38,7 +38,7 @@ const translations = {
     contacts_body: "Puoi contattarmi per informazioni su disponibilità e orari:",
     libro_title: "Il mio libro",
     libro_desc_2: "Una raccolta di racconti brevi con un fil rouge peculiare: Luca; alter-ego narrativo e omonimo dell'autore. Luca è un ragazzo di vent'anni, studia e ha un'esistenza ordinaria. Vive in un collegio, gli piace la <em>pita gyros</em> e gli è capitato di uscire con più ragazze di quanto si sarebbe mai aspettato. Ha avuto lavori strani, ha qualche trauma infantile, alcune teorie sui gabinetti e ogni tanto gli capitano fenomeni paranormali. Il suo modo di vedere le cose, ironico e romantico allo stesso tempo, gli permette di cogliere il bello dei momenti più semplici e di narrarli con naturalezza, come se stesse raccontando a chi legge, in confidenza, quello che gli è successo l'altro ieri.",
-    libro_desc_1: "Nel 2025 ho pubblicato un libro: <a href='https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO' style='text-decoration: none; color: #3B3B3B'>'La sottile differenza tra la spremuta e il succo d'arancia'</a>, con Montag Edizioni. È la raccolta dei racconti brevi che ho scritto negli ultimi tre anni.",
+    libro_desc_1: "Nel 2025 ho pubblicato un libro: <a href='https://www.libreriauniversitaria.it/sottile-differenza-spremuta-succo-arancia/libro/9788868928605?srsltid=AfmBOop9OTZ66EMxxuoYdpCUOzRACWWZf-1BoCOSATloV0Ur7tx9jawO' style='text-decoration: none; color: #3B3B3B'>'La sottile differenza tra la spremuta e il succo d'arancia'</a>, con Montag Edizioni. È la raccolta dei racconti brevi che ho scritto nei tre anni precedenti.",
     libro_desc_3: "Clicca sulla copertina per acquistare il libro! Oppure clicca sul video per ascoltare uno dei racconti del libro letto da me! ",
     
     progetti_link:"Progetti",
@@ -48,12 +48,16 @@ const translations = {
     progetto_1_desc: "Progetto per il corso LCP-A: analisi dati di un dataset simulato con Monte Carlo (particelle ad alta energia)",
     progetto_2_titolo: "Restricted Boltzmann Machine",
     progetto_2_desc: "Progetto per il corso LCP-B: utilizzo di una RBM sul MNIST dataset per il riconoscimento delle cifre",
-    progetto_3_titolo: "(WORK IN PROGRESS) ReDis Energy",
+    progetto_3_titolo: "(NEW!) ReDis Energy",
     progetto_3_desc: "Progetto per il corso LCP-B: utilizzo delle tecniche di ML per la previsione di produzione di energia elettrica a partire dal meteo forecast",
     progetto_4_titolo: "God doesn't play pool",
     progetto_4_desc: "Progetto per il corso TLP: unità didattica su urti e leggi di conservazione (ENG)",
     progetto_5_titolo: "Luca Brocco - Tesi di laurea LT-Fisica",
-    progetto_5_desc: "Caratterizzazione tramite spettroscopia ottica di un plasma a pressione atmosferica"
+    progetto_5_desc: "Caratterizzazione tramite spettroscopia ottica di un plasma a pressione atmosferica",
+    progetto_6_titolo: "Analisi dati ARPAV open data",
+    progetto_6_desc: "Progetto per il corso ASPA: analisi statistica di dati meteo ARPAV tramite linguaggio R, simulazione MCMC con JAGS e pacchetto ARIMA",
+    progetto_7_titolo: "CORD-19",
+    progetto_7_desc: "Progetto per il corso MAPD-B: analisi dei paper relativi a SARS-COV19 tramite cluster distribuito con Dask"
     
     
     
@@ -106,12 +110,16 @@ const translations = {
     progetto_1_desc: "Project for LCP-A course: analysis of a Monte Carlo generated dataset for high energy particles",
     progetto_2_titolo: "Restricted Boltzmann Machine",
     progetto_2_desc: "Project for LCP-B course: use of a RBM on MNIST dataset for digit recognition",
-    progetto_3_titolo: "(WORK IN PROGRESS) ReDis Energy",
+    progetto_3_titolo: "(NEW!) ReDis Energy",
     progetto_3_desc: "Project for LCP-B course: use of ML tecniques for predicting energy production from meteo forecast",
     progetto_4_titolo: "God doesn't play pool",
     progetto_4_desc: "Project for TLP course: a teaching unit about collisions and conservation laws",
     progetto_5_titolo: "Luca Brocco - Thesis LT-Fisica",
-    progetto_5_desc: "Control of the kinetics of self-assembling nanostructures by atmospheric pressure plasma"
+    progetto_5_desc: "Control of the kinetics of self-assembling nanostructures by atmospheric pressure plasma",
+    progetto_6_titolo: "ARPAV open data analysis",
+    progetto_6_desc: "Project for ASPA course: statistical analysis of ARPAV data with R language, MCMC simulation with JAGS and ARIMA package",
+    progetto_7_titolo: "CORD-19",
+    progetto_7_desc: "Project for MAPD-B course: analysis of papers relative to SARS-COV19 via a distributed cluster with Dask"
     
     
   }
