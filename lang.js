@@ -57,7 +57,10 @@ const translations = {
     progetto_6_titolo: "Analisi dati ARPAV open data",
     progetto_6_desc: "Progetto per il corso ASPA: analisi statistica di dati meteo ARPAV tramite linguaggio R, simulazione MCMC con JAGS e pacchetto ARIMA",
     progetto_7_titolo: "CORD-19",
-    progetto_7_desc: "Progetto per il corso MAPD-B: analisi dei paper relativi a SARS-COV19 tramite cluster distribuito con Dask"
+    progetto_7_desc: "Progetto per il corso MAPD-B: analisi dei paper relativi a SARS-COV19 tramite cluster distribuito con Dask",
+    progetto_8_titolo: "La malattia di Sara",
+    progetto_8_desc: "Progetto per il corso Biological Datasets: analisi strutturale e mutazionale della proteina MMACHC"
+    
 
   },
   
@@ -118,7 +121,9 @@ const translations = {
     progetto_6_titolo: "ARPAV open data analysis",
     progetto_6_desc: "Project for ASPA course: statistical analysis of ARPAV data with R language, MCMC simulation with JAGS and ARIMA package",
     progetto_7_titolo: "CORD-19",
-    progetto_7_desc: "Project for MAPD-B course: analysis of papers relative to SARS-COV19 via a distributed cluster with Dask"
+    progetto_7_desc: "Project for MAPD-B course: analysis of papers relative to SARS-COV19 via a distributed cluster with Dask",
+    progetto_8_titolo: "Sara's disease",
+    progetto_8_desc: "Project for Biological Datasets course: comprehensive structural and mutational exploration and analysis of MMACHC protein"
     
     
   }
