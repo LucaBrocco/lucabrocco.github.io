@@ -48,7 +48,7 @@ const translations = {
     progetto_1_desc: "Progetto per il corso LCP-A: analisi dati di un dataset simulato con Monte Carlo (particelle ad alta energia)",
     progetto_2_titolo: "Restricted Boltzmann Machine",
     progetto_2_desc: "Progetto per il corso LCP-B: utilizzo di una RBM sul MNIST dataset per il riconoscimento delle cifre",
-    progetto_3_titolo: "(NEW!) ReDis Energy",
+    progetto_3_titolo: "ReDis Energy",
     progetto_3_desc: "Progetto per il corso LCP-B: utilizzo delle tecniche di ML per la previsione di produzione di energia elettrica a partire dal meteo forecast",
     progetto_4_titolo: "God doesn't play pool",
     progetto_4_desc: "Progetto per il corso TLP: unità didattica su urti e leggi di conservazione (ENG)",
@@ -59,7 +59,9 @@ const translations = {
     progetto_7_titolo: "CORD-19",
     progetto_7_desc: "Progetto per il corso MAPD-B: analisi dei paper relativi a SARS-COV19 tramite cluster distribuito con Dask",
     progetto_8_titolo: "La malattia di Sara",
-    progetto_8_desc: "Progetto per il corso Biological Datasets: analisi strutturale e mutazionale della proteina MMACHC"
+    progetto_8_desc: "Progetto per il corso Biological Datasets: analisi strutturale e mutazionale della proteina MMACHC",
+    progetto_10_titolo:"(NEW!) Joint model of population dynamics and vector-borne diseases",
+    progetto_10_desc:"Riassunto del mio lavoro durante uno Stage @ UniPr nel contesto del progetto \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\""
     
 
   },
@@ -112,7 +114,7 @@ const translations = {
     progetto_1_desc: "Project for LCP-A course: analysis of a Monte Carlo generated dataset for high energy particles",
     progetto_2_titolo: "Restricted Boltzmann Machine",
     progetto_2_desc: "Project for LCP-B course: use of a RBM on MNIST dataset for digit recognition",
-    progetto_3_titolo: "(NEW!) ReDis Energy",
+    progetto_3_titolo: "ReDis Energy",
     progetto_3_desc: "Project for LCP-B course: use of ML tecniques for predicting energy production from meteo forecast",
     progetto_4_titolo: "God doesn't play pool",
     progetto_4_desc: "Project for TLP course: a teaching unit about collisions and conservation laws",
@@ -123,7 +125,9 @@ const translations = {
     progetto_7_titolo: "CORD-19",
     progetto_7_desc: "Project for MAPD-B course: analysis of papers relative to SARS-COV19 via a distributed cluster with Dask",
     progetto_8_titolo: "Sara's disease",
-    progetto_8_desc: "Project for Biological Datasets course: comprehensive structural and mutational exploration and analysis of MMACHC protein"
+    progetto_8_desc: "Project for Biological Datasets course: comprehensive structural and mutational exploration and analysis of MMACHC protein",
+    progetto_10_titolo:"(NEW!) Joint model of population dynamics and vector-borne diseases",
+    progetto_10_desc:"Summary of my work during a Stage @ UniPr in context of project \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\""
     
     
   }
