@@ -129,7 +129,7 @@ const translations = {
     progetto_8_desc: "Project for Biological Datasets course: comprehensive structural and mutational exploration and analysis of MMACHC protein",
     progetto_001_titolo:"(NEW!) SIR model with behavioral changes and age classes on top of a network",
     progetto_001_desc:"SIR epidemiological model on top of a network based on real data for disease transmission with behavioral changes and age classes",
-    progetto_10_titolo:"(NEW!) Joint model of population dynamics and vector-borne diseases",
+    progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
     progetto_10_desc:"Summary of my work during a Stage @ UniPr in context of project \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\""
     
     
