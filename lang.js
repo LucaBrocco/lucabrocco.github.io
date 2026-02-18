@@ -60,11 +60,10 @@ const translations = {
     progetto_7_desc: "Progetto per il corso MAPD-B: analisi dei paper relativi a SARS-COV19 tramite cluster distribuito con Dask",
     progetto_8_titolo: "La malattia di Sara",
     progetto_8_desc: "Progetto per il corso Biological Datasets: analisi strutturale e mutazionale della proteina MMACHC",
-    progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
-    progetto_10_desc:"Riassunto del mio lavoro durante uno Stage @ UniPr nel contesto del progetto \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\"",
     progetto_001_titolo:"(NEW!) SIR model with behavioral changes and age classes on top of a network",
-    progetto_001_desc:"Modello epidemiologico SIR su un network basato su dati reali di trasmissione di malattie e cambiamenti comportamentali basati sulla classe d'età"
-    
+    progetto_001_desc:"Modello epidemiologico SIR su un network basato su dati reali di trasmissione di malattie e cambiamenti comportamentali basati sulla classe d'età",
+    progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
+    progetto_10_desc:"Riassunto del mio lavoro durante uno Stage @ UniPr nel contesto del progetto \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\""
 
   },
   
@@ -128,10 +127,11 @@ const translations = {
     progetto_7_desc: "Project for MAPD-B course: analysis of papers relative to SARS-COV19 via a distributed cluster with Dask",
     progetto_8_titolo: "Sara's disease",
     progetto_8_desc: "Project for Biological Datasets course: comprehensive structural and mutational exploration and analysis of MMACHC protein",
-    progetto_10_titolo:"(NEW!) Joint model of population dynamics and vector-borne diseases",
-    progetto_10_desc:"Summary of my work during a Stage @ UniPr in context of project \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\"",
     progetto_001_titolo:"(NEW!) SIR model with behavioral changes and age classes on top of a network",
-    progetto_001_desc:"SIR epidemiological model on top of a network based on real data for disease transmission with behavioral changes and age classes"
+    progetto_001_desc:"SIR epidemiological model on top of a network based on real data for disease transmission with behavioral changes and age classes",
+    progetto_10_titolo:"(NEW!) Joint model of population dynamics and vector-borne diseases",
+    progetto_10_desc:"Summary of my work during a Stage @ UniPr in context of project \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\""
+    
     
     
   }
