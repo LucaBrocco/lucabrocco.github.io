@@ -63,7 +63,9 @@ const translations = {
     progetto_001_titolo:"(NEW!) SIR model with behavioral changes and age classes on top of a network",
     progetto_001_desc:"Modello epidemiologico SIR su un network basato su dati reali di trasmissione di malattie e cambiamenti comportamentali basati sulla classe d'età",
     progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
-    progetto_10_desc:"Riassunto del mio lavoro durante uno Stage @ UniPr nel contesto del progetto \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\""
+    progetto_10_desc:"Riassunto del mio lavoro durante uno Stage @ UniPr nel contesto del progetto \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\"",
+    progetto_11_titolo:"Application of Bayesian Inference to Reinforcement Learning",
+    progetto_11_desc:"Progetto per il corso Information Theory and Inference: applicazione delle tecniche di Bayesian Inference a problemi RL e benchmark con tecniche classiche"
 
   },
   
@@ -130,7 +132,9 @@ const translations = {
     progetto_001_titolo:"(NEW!) SIR model with behavioral changes and age classes on top of a network",
     progetto_001_desc:"SIR epidemiological model on top of a network based on real data for disease transmission with behavioral changes and age classes",
     progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
-    progetto_10_desc:"Summary of my work during a Stage @ UniPr in context of project \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\""
+    progetto_10_desc:"Summary of my work during a Stage @ UniPr in context of project \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\"",
+    progetto_11_titolo:"Application of Bayesian Inference to Reinforcement Learning",
+    progetto_11_desc:"Project for Information Theory and Inference course: application of Bayesian Inference to RL problems and benchmarking with classic RL techniques"
     
     
     
