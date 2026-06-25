@@ -65,7 +65,11 @@ const translations = {
     progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
     progetto_10_desc:"Riassunto del mio lavoro durante uno Stage @ UniPr nel contesto del progetto \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\"",
     progetto_11_titolo:"Application of Bayesian Inference to Reinforcement Learning",
-    progetto_11_desc:"Progetto per il corso Information Theory and Inference: applicazione delle tecniche di Bayesian Inference a problemi RL e benchmark con tecniche classiche"
+    progetto_11_desc:"Progetto per il corso Information Theory and Inference: applicazione delle tecniche di Bayesian Inference a problemi RL e benchmark con tecniche classiche",
+    progetto_12_titolo:"Simulazione CUDA sistema di N corpi",
+    progetto_12_desc:"Simulazione e benchmark delle performance di diverse tecniche di parallelizzazione applicate a un sistema di N corpi in C",
+    progetto_13_titolo:"Ricolorizzazione immagini con allineamento alle preferenze",
+    progetto_13_desc:"Implementazione di DPO come algoritmo di allineamento preferenza applicato a modelli di ricolorizzazione immagini"
 
   },
   
@@ -134,7 +138,11 @@ const translations = {
     progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
     progetto_10_desc:"Summary of my work during a Stage @ UniPr in context of project \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\"",
     progetto_11_titolo:"Application of Bayesian Inference to Reinforcement Learning",
-    progetto_11_desc:"Project for Information Theory and Inference course: application of Bayesian Inference to RL problems and benchmarking with classic RL techniques"
+    progetto_11_desc:"Project for Information Theory and Inference course: application of Bayesian Inference to RL problems and benchmarking with classic RL techniques",
+    progetto_12_titolo:"N-body simulation with CUDA",
+    progetto_12_desc:"Implementation and benchmark of different parallelization techniques in order to simulate a N-body interacting system",
+    progetto_13_titolo:"Image Recolorization with Preference Alignment",
+    progetto_13_desc:"DPO implementation as a preference alignment algorithm to ECCV16 model in recolorization task with human feedback"
     
     
     
