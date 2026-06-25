@@ -64,12 +64,16 @@ const translations = {
     progetto_001_desc:"Modello epidemiologico SIR su un network basato su dati reali di trasmissione di malattie e cambiamenti comportamentali basati sulla classe d'età",
     progetto_10_titolo:"Joint model of population dynamics and vector-borne diseases",
     progetto_10_desc:"Riassunto del mio lavoro durante uno Stage @ UniPr nel contesto del progetto \"Integrating network science and explainable AI to forecast the impact of climate change on infectious disease risk\"",
-    progetto_11_titolo:"Application of Bayesian Inference to Reinforcement Learning",
+    progetto_11_titolo:"Applicazione dell'Inferenza Bayesiana al Reinforcement Learning",
     progetto_11_desc:"Progetto per il corso Information Theory and Inference: applicazione delle tecniche di Bayesian Inference a problemi RL e benchmark con tecniche classiche",
     progetto_12_titolo:"Simulazione CUDA sistema di N corpi",
     progetto_12_desc:"Simulazione e benchmark delle performance di diverse tecniche di parallelizzazione applicate a un sistema di N corpi in C",
     progetto_13_titolo:"Ricolorizzazione immagini con allineamento alle preferenze",
-    progetto_13_desc:"Implementazione di DPO come algoritmo di allineamento preferenza applicato a modelli di ricolorizzazione immagini"
+    progetto_13_desc:"Implementazione di DPO come algoritmo di allineamento preferenza applicato a modelli di ricolorizzazione immagini",
+    stageunipr: "(Ago 2025 - Ott 2025) Data Scientist stage @ UniParma",
+    stageunipr_info:"Durante il mio stage @ UniParma ho collaborato con un gruppo di ricerca coinvolto nell'investigazione di malattie Vector-Borne e di come influenzeranno l'Italia a causa del cambiamento climatico nel prossimo secolo",
+    stageomnys: "(Mar 2026 - Lug 2026) AI Engineer stage @ OMNYS",
+    stageomnys_info:"Durante il mio stage a OMNYS ho lavorato come AI engineer nello sviluppo e fine tuning di LLM di piccole dimensioni finalizzati a compiere task di compliance checking usando metodi preference alignment come GRPO"
 
   },
   
@@ -142,7 +146,11 @@ const translations = {
     progetto_12_titolo:"N-body simulation with CUDA",
     progetto_12_desc:"Implementation and benchmark of different parallelization techniques in order to simulate a N-body interacting system",
     progetto_13_titolo:"Image Recolorization with Preference Alignment",
-    progetto_13_desc:"DPO implementation as a preference alignment algorithm to ECCV16 model in recolorization task with human feedback"
+    progetto_13_desc:"DPO implementation as a preference alignment algorithm to ECCV16 model in recolorization task with human feedback",
+    stageunipr: "(Aug 2025 - Oct 2025) Data Scientist stage @ UniParma",
+    stageunipr_info:"During my stage @ UniParma I joined a research group involved in investigating how Vector-Borne diseases will influence Italy in the next century because of climate change",
+    stageomnys: "(Mar 2026 - Jul 2026) AI Engineer stage @ OMNYS",
+    stageomnys_info:"During my stage at OMNYS I worked as AI Engineer. I dedicated myself in fine tuning LLM models with preference alignment methods in constrained resources scenarios towards training them on compliance checking tasks"
     
     
     
