@@ -73,7 +73,10 @@ const translations = {
     stageunipr: "(Ago 2025 - Ott 2025) Data Scientist stage @ UniParma",
     stageunipr_info:"Durante il mio stage @ UniParma ho collaborato con un gruppo di ricerca coinvolto nell'investigazione di malattie Vector-Borne e di come influenzeranno l'Italia a causa del cambiamento climatico nel prossimo secolo",
     stageomnys: "(Mar 2026 - Lug 2026) AI Engineer stage @ OMNYS",
-    stageomnys_info:"Durante il mio stage a OMNYS ho lavorato come AI engineer nello sviluppo e fine tuning di LLM di piccole dimensioni finalizzati a compiere task di compliance checking usando metodi preference alignment come GRPO"
+    stageomnys_info:"Durante il mio stage a OMNYS ho lavorato come AI engineer nello sviluppo e fine tuning di LLM di piccole dimensioni finalizzati a compiere task di compliance checking usando metodi preference alignment come GRPO",
+    master_thesis_title: "Tesi di Laurea Magistrale Physics",
+    master_thesis:"Post-Training Small Language Models for Editorial Compliance Checking: How Output Structure Inverts the Ranking of Alignment Methods. Soggetto della Tesi è lo sviluppo di un sistema agentico per la valutazione automatica di articoli giornalistici tramite LM di dimensioni ridotte e algoritmi di allineamento di preferenza. Il contenuto della tesi è sottomesso a EACL 2027 - Industry track."
+    
 
   },
   
@@ -150,7 +153,9 @@ const translations = {
     stageunipr: "(Aug 2025 - Oct 2025) Data Scientist stage @ UniParma",
     stageunipr_info:"During my stage @ UniParma I joined a research group involved in investigating how Vector-Borne diseases will influence Italy in the next century because of climate change",
     stageomnys: "(Mar 2026 - Jul 2026) AI Engineer stage @ OMNYS",
-    stageomnys_info:"During my stage at OMNYS I worked as AI Engineer. I dedicated myself in fine tuning LLM models with preference alignment methods in constrained resources scenarios towards training them on compliance checking tasks"
+    stageomnys_info:"During my stage at OMNYS I worked as AI Engineer. I dedicated myself in fine tuning LLM models with preference alignment methods in constrained resources scenarios towards training them on compliance checking tasks",
+    master_thesis_title: "Master's Thesis Physics",
+    master_thesis:"Post-Training Small Language Models for Editorial Compliance Checking: How Output Structure Inverts the Ranking of Alignment Methods. We explored several preference alignment techniques and small LMs in order to determine which configuration performed best on a open ended task for an in-production article evaluation system. Content of the Thesis is submitted to EACL 2027 - Industry Track."
     
     
     
