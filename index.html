@@ -1,129 +1,270 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luca Brocco's homepage</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luca – Physics-informed ML for energy systems</title>
+<meta name="description" content="Portfolio and timeline of milestones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCF6F2; --ink:#140707; --muted:#6B5552; --grid:#E6D8D0; --card:#FFFDFB;
+  --edu:#1F5FBF; --work:#B4540A; --vol:#750101; --proj:#2E7D5B;
+  --serif:"Newsreader",Georgia,serif; --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#1B1111; --ink:#F7EEE9; --muted:#B9A6A1; --grid:#3A2A28; --card:#281A19;
+        --edu:#6FA4F2; --work:#F0A15E; --vol:#E5736F; --proj:#6CC9A0;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.6 var(--sans);
+  padding-bottom:env(safe-area-inset-bottom,0)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--edu);outline-offset:3px;border-radius:4px}
+
+/* Banner */
+header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--grid);
+  padding-top:env(safe-area-inset-top,0)}
+.bar{max-width:1000px;margin:0 auto;padding:.8rem 1.25rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:.5rem 1.5rem}
+.brand{font:600 1.25rem var(--serif);text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;padding:.35rem 0;display:inline-block}
+nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+
+main{max-width:1000px;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+.intro{display:grid;grid-template-columns:auto 1fr;gap:1.5rem 2rem;align-items:center;margin-bottom:3rem}
+.photo{width:160px;height:160px;border-radius:50%;object-fit:cover;background:var(--grid);
+  border:4px solid var(--card);box-shadow:0 0 0 2px var(--vol)}
+h1{font:600 clamp(1.9rem,5vw,3rem)/1.1 var(--serif);margin:0 0 .6rem}
+.intro p{margin:0;color:var(--muted);max-width:52ch}
+
+/* Timeline */
+h2{font:600 1.6rem var(--serif);margin:0 0 .25rem}
+.hint{color:var(--muted);margin:0 0 1.5rem;font-size:.95rem}
+.legend{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;margin:0 0 1.5rem;padding:0;list-style:none;font-size:.9rem}
+.legend li::before{content:"";display:inline-block;width:.7rem;height:.7rem;border-radius:50%;
+  background:var(--c);margin-right:.4rem}
+.tl{position:relative;padding-top:1.6rem}
+.grid{position:absolute;inset:0;pointer-events:none}
+.tick{position:absolute;top:0;bottom:0;border-left:1px dashed var(--grid)}
+.tick span{position:absolute;top:0;left:.3rem;font-size:.78rem;color:var(--muted)}
+.row{position:relative;margin:0 0 .35rem;--c:var(--edu)}
+.row.work{--c:var(--work)} .row.vol{--c:var(--vol)} .row.proj{--c:var(--proj)}
+.row .label{font-size:.85rem;color:var(--muted);margin:0 0 .1rem;padding-left:.2rem}
+.row{--lane:2.75rem}
+.track{position:relative;height:calc(var(--lanes,1)*var(--lane))}
+.node{position:absolute;height:var(--lane);background:none;border:0;padding:0;cursor:pointer;color:inherit;
+  touch-action:manipulation}
+.node::before{content:"";position:absolute;left:0;right:0;top:50%;height:4px;margin-top:-2px;
+  background:var(--c);border-radius:2px;transition:height .15s,margin .15s}
+.node:hover::before,.node[aria-expanded="true"]::before{height:8px;margin-top:-4px}
+.node i{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;
+  background:var(--c);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--c)}
+.node i.s{left:0} .node i.e{left:100%}
+.node i.open{background:var(--paper);border-color:var(--c);box-shadow:none}
+.node:focus-visible{outline-offset:0}
+
+/* Popup */
+#pop{position:fixed;z-index:50;width:min(320px,calc(100vw - 24px));background:var(--card);color:var(--ink);
+  border:1px solid var(--grid);border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.22);
+  opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s,transform .15s,visibility .15s}
+#pop.on{opacity:1;visibility:visible;transform:none}
+#pop img{display:block;width:100%;height:150px;object-fit:cover;background:var(--grid)}
+#pop img[hidden]{display:none}
+#pop .body{padding:.8rem 1rem 1rem}
+#pop h3{font:600 1.1rem var(--serif);margin:0}
+#pop .when{font-size:.82rem;color:var(--muted);margin:0 0 .4rem}
+#pop p.txt{margin:0;font-size:.93rem}
+#pop .close{display:none;position:absolute;top:.4rem;right:.4rem;width:2.4rem;height:2.4rem;border-radius:50%;
+  border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.3rem;cursor:pointer}
+footer{max-width:1000px;margin:0 auto;padding:1.5rem 1.25rem 2.5rem;color:var(--muted);font-size:.9rem;
+  border-top:1px solid var(--grid)}
+
+@media (max-width:640px){
+  .intro{grid-template-columns:1fr;justify-items:start}
+  .photo{width:120px;height:120px}
+  .row{--lane:3.25rem}
+  #pop{left:12px!important;right:12px;top:auto!important;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:auto}
+  #pop .close{display:block}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 
-  <header class="hero-section">
-    <nav class="navbar">
+<header>
+  <div class="bar">
+    <a class="brand" href="#top">Luca Brocco's homepage</a>
+    <nav aria-label="Main">
       <ul>
-        <li><a href="projects.html" data-i18n="progetti_link"></a></li>
-        <li><a href="posts.html" data-i18n="ripetizioni_link">Ripetizioni</a></li>
+        <li><a href="#timeline">Timeline</a></li>
         <li><a href="https://github.com/LucaBrocco">GitHub</a></li>
-        <li><a href="book.html" data-i18n="libro">Il mio libro</a></li>
-        <li><a href="https://instagram.com/lucabroccoo">Instagram</a></li>
         <li><a href="https://www.linkedin.com/in/luca-brocco/">LinkedIn</a></li>
+        <li><a href="assets/cv.pdf">CV</a></li>
+        <li><a href="https://padlet.com/lucabrocco31/recensioni-ripetizioni-con-luca-brocco-t84auaukfms89thw">Reviews</a></li>
+        <li><a href="mailto:lucabrocco31@gmail.com">Contact</a></li>
       </ul>
     </nav>
-    <!-- Language Switcher Box -->
-<div class="lang-switch-box">
-  <div class="lang-switch">
-    <label class="switch">
-      <input type="checkbox" id="lang-toggle" onchange="toggleLanguage(this)">
-      <span class="slider"></span>
-    </label>
-    <span id="lang-label">IT</span>
   </div>
-</div>
-      
-    
+</header>
 
-    <div class="profile-container">
-      <img src="profile.jpg" alt="Luca Brocco" class="profile-img" />
-      <h1 class="name" data-i18n="titolo">Luca Brocco</h1>
-      <p class="description" data-i18n="descrizione">Benvenut* nella mia home page! Qui potrai trovare informazioni su tutto quello che mi riguarda!</p>
+<main id="top">
+  <section class="intro">
+    <img class="photo" src="assets/me.png" alt="Portrait of Luca" width="160" height="160">
+    <div>
+      <h1>Luca Brocco</h1>
+      <p>Data Scientist | AI Engineer | Physicist | Teacher</p>
+      <p>MSc in Physics of Data, University of Padova.</p>
+      <p>Below are the main milestones of the last few years.</p>
     </div>
-  </header>
-  <section class="achievements">
-  <h2 data-i18n="attività_presente">Attività (presente):</h2>
-  <p class="subtitle_top" data-i18n="attività_sub">Clicca su un attività per avere maggiori informazioni</p>
-  <ul>
-    <li class="achievement">
-    <a href="posts.html">
-      <div class="title" data-i18n="ripetizioni">(2019-) Ripetizioni di matematica e fisica</div>
-      <div class="subtitle" data-i18n="ripetizioni_info">Dal 2019 dò ripetizioni di matematica e fisica a ragazzi e ragazze di scuole superiori e università</div>
-      </a>
-    </li>
-    <li class="achievement">
-    <a href="http://physicsofdata.dfa.unipd.it/">
-      <div class="title" data-i18n="pod"></div>
-      <div class="subtitle" data-i18n="pod_info"></div>
-    </a>
-    </li>
-    <li class="achievement">
-    <a href="book.html">
-      <div class="title" data-i18n="libro_a"></div>
-      <div class="subtitle" data-i18n="libro_info"></div>
-    </a>
-    </li>
-  </ul>
-</section>
+  </section>
 
-<!-- PAST ACTIVITIES -->
+  <section id="timeline" aria-labelledby="tl-title">
+    <h2 id="tl-title">Timeline</h2>
+    <p class="hint">Hover over a line, or tap it on a phone, to see details.</p>
+    <ul class="legend">
+      <li style="--c:var(--edu)">Education</li>
+      <li style="--c:var(--work)">Work</li>
+      <li style="--c:var(--vol)">Volunteering</li>
+      <li style="--c:var(--proj)">Other</li>
+    </ul>
+    <div class="tl" id="tl"><div class="grid" id="grid" aria-hidden="true"></div><div id="rows"></div></div>
+  </section>
+</main>
 
-<section class="achievements">
-  <h2 data-i18n="past_act_title">Attività (passate):</h2>
-  <ul>
-    <li class="achievement">
-      <div class="title" data-i18n="laurea_fisica"></div>
-      <div class="subtitle" data-i18n="laurea_fisica_info"></div>
-    </li>
-    <li class="achievement">
-      <div class="title" data-i18n="volontariato"></div>
-      <div class="subtitle" data-i18n="volontariato_info"></div>
-    </li>
-    <li class="achievement">
-      <div class="title" data-i18n="insegnamento"></div>
-      <div class="subtitle" data-i18n="insegnamento_info"></div>
-    </li>
-    <li class="achievement">
-      <div class="title" data-i18n="stageunipr"></div>
-      <div class="subtitle" data-i18n="stageunipr_info"></div>
-    </li>
-    <li class="achievement">
-      <div class="title" data-i18n="stageomnys"></div>
-      <div class="subtitle" data-i18n="stageomnys_info"></div>
-    </li>
-  </ul>
-</section>
+<footer>© <span id="yr"></span> Luca Brocco - lucabrocco31@gmail.com</footer>
 
-    <section class="links-section">
-      <h2 class="links-title" data-i18n="links"></h2>
-      <div class="links-container">
-        <a href="https://github.com/LucaBrocco" class="link-card">GitHub</a>
-        <a href="https://github.com/LucaBrocco/lucabrocco.github.io/blob/main/CV_LucaBrocco-8-1.pdf" class="link-card">CV</a>
-      </div>
-    </section>
-  
-  </main>
+<div id="pop" role="dialog" aria-live="polite" aria-label="Experience details">
+  <button class="close" type="button" aria-label="Close">×</button>
+  <img alt="" hidden>
+  <div class="body"><h3></h3><p class="when"></p><p class="txt"></p></div>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Luca Brocco - lucabrocco31@gmail.com - +39 3703300427</p>
-  </footer>
+<script>
+/* ===== EDIT YOUR EXPERIENCES HERE =====
+   Each ROW is one horizontal band and can hold any number of items (lines).
+   item: start / end as "YYYY-MM" (end: null = ongoing), img (optional), text
+   type: "edu" | "work" | "vol" | "proj" sets the colour of the whole row.
+   Items in the same row that overlap in time are stacked automatically. */
+const ROWS = [
+  {label:"Education", type:"edu", items:[
+    {title:"BSc in Physics - University of Padova", start:"2021-10", end:"2024-12", img:"assets/bsc.png",
+     text:"During my BSc I acquired knowledge in several Physics fields, other than advanced Mathematics, Statistics and Coding. I graduated with 92/110."},
+    {title:"MSc in Physics of Data - University of Padova", start:"2025-1", end:"2026-9", img:"assets/logo_pod.png",
+     text:"The MSc in Physics of Data provides a Physicist techniques of Data Science and AI Engineering to tackle and solve complex problems. I graduated with 110/110 with honors."}
+  ]},
+  {label:"Work", type:"work", items:[
+    {title:"Data Scientist Stage - University of Parma", start:"2025-08", end:"2025-10", img:"assets/unipr.jpg",
+     text:"I contributed to a research project involving vector-borne diseases and their spread in Italy in the coming decades."},
+     {title:"AI Engineering Stage - OMNYS (Vicenza)", start:"2026-03", end:"2026-07", img:"assets/omnys.jpg",
+     text:"For my MSc Thesis I joined the AI team in OMNYS for the development of an in-production agentic system for automated compliance checking."},
+     {title:"Mathematics and Physics teacher - IIS Levi (Montebelluna)", start:"2025-02", end:"2025-02", img:"assets/levi.jpg",
+     text:"I taught at the Liceo Scientifico section of IIS Levi Montebelluna for one month."},
+     {title:"Mathematics and Physics teacher - Liceo Pigafetta (Vicenza)", start:"2026-10", end:"2026-11", img:"assets/pigafetta.jpg",
+     text:"I taught at the Liceo Linguistico and Musicale sections of Liceo Pigafetta (Vicenza) for one month."},
+     {title:"Mathematics and Physics tutor - Freelance - Remote", start:"2019-09", end:null, img:"assets/private.jpg",
+     text:"I teach Mathematics and Physics as a private tutor. I followed more than 60+ students and allowed all of them to achieve the objectives they aimed for."}
+  ]},
+  {label:"Volunteering", type:"vol", items:[
+    {title:"CUAMM Volunteer - Padova", start:"2022-10", end:"2026-07", img:"assets/cuamm.jpg",
+     text:"As a CUAMM student I promoted the association's activities in Padova."},
+    {title:"VIDES Veneto Volunteer - Padova", start:"2022-10", end:"2025-06", img:"assets/vides.png",
+     text:"As a volunteer for VIDES, I taught Italian to foreigners students and workers from all over the world."},
+    {title:"Youth Educator - Quarto d'Altino (VE)", start:"2019-06", end:"2025-06", img:"assets/animatore.jpg",
+     text:"As a Youth Educator I collaborated for the organization and realization of the summer children camp (GrEst) of my hometown."}
+  ]},
+  {label:"Other", type:"proj", items:[
+    {title:"We4Us organizational committe", start:"2025-11", end:"2026-09", img:"assets/we4us.jpg",
+     text:"I contributed to the organziation of Physics of Data 2026 We4Us Workshop, a yearly event that involves students, companies and researchers."}
+  ]}
+];
+const LABELS = {edu:"Education", work:"Work", vol:"Volunteering", proj:"Project"};
+
+const $ = s => document.querySelector(s);
+const ym = s => { const [y,m] = s.split("-").map(Number); return y + (m-1)/12; };
+const now = new Date(); const today = now.getFullYear() + now.getMonth()/12;
+const fmt = s => { if (!s) return "present"; const [y,m] = s.split("-").map(Number);
+  return new Date(y, m-1, 1).toLocaleDateString("en",{month:"short",year:"numeric"}); };
+
+ROWS.forEach(r => r.items.forEach(d => { d.type = r.type; d.a = ym(d.start); d.b = d.end ? ym(d.end) : today; }));
+const all = ROWS.flatMap(r => r.items);
+const min = Math.floor(Math.min(...all.map(d=>d.a)));
+const max = Math.ceil(Math.max(...all.map(d=>d.b))) + 0.001;
+const pct = v => ((v-min)/(max-min))*100;
+
+/* year grid (thinned on narrow screens) */
+const span = Math.round(max-min), step = span > 8 ? 2 : 1;
+for (let y=min; y<=max; y+=step){
+  const t = document.createElement("div"); t.className="tick"; t.style.left = pct(y)+"%";
+  t.innerHTML = `<span>${y}</span>`; $("#grid").appendChild(t);
+}
+
+/* rows: each holds several lines; overlapping ones get their own sub-lane */
+const pop = $("#pop"), pimg = pop.querySelector("img");
+let current = null;
+ROWS.forEach(r => {
+  const row = document.createElement("div"); row.className = "row " + r.type;
+  row.innerHTML = `<p class="label"></p><div class="track"></div>`;
+  row.querySelector(".label").textContent = r.label;
+  const track = row.querySelector(".track");
+
+  const laneEnds = [];
+  [...r.items].sort((x,y)=>x.a-y.a).forEach(d => {
+    let lane = laneEnds.findIndex(end => end + 0.04 <= d.a);
+    if (lane < 0) lane = laneEnds.length;
+    laneEnds[lane] = d.b;
+
+    const b = document.createElement("button");
+    b.type="button"; b.className="node"; b.setAttribute("aria-expanded","false");
+    b.setAttribute("aria-label", `${d.title}, ${LABELS[d.type]}, ${fmt(d.start)} to ${fmt(d.end)}`);
+    b.style.left = pct(d.a)+"%"; b.style.width = Math.max(pct(d.b)-pct(d.a),1.5)+"%";
+    b.style.top = `calc(${lane} * var(--lane))`;
+    b.innerHTML = `<i class="s"></i><i class="e ${d.end ? "" : "open"}"></i>`;
+    track.appendChild(b);
+
+    b.addEventListener("pointerenter", ev => { if (ev.pointerType==="mouse") show(b,d,ev); });
+    b.addEventListener("pointermove",  ev => { if (ev.pointerType==="mouse" && current===b) place(ev.clientX, b); });
+    b.addEventListener("pointerleave", ev => { if (ev.pointerType==="mouse" && document.activeElement!==b) hide(); });
+    b.addEventListener("focus", () => show(b,d));
+    b.addEventListener("blur",  () => { if (current===b) hide(); });
+    b.addEventListener("click", ev => { current===b && ev.pointerType!=="mouse" ? hide() : show(b,d,ev); });
+  });
+  track.style.setProperty("--lanes", laneEnds.length);
+  $("#rows").appendChild(row);
+});
+
+function show(b,d,ev){
+  if (current) current.setAttribute("aria-expanded","false");
+  current = b; b.setAttribute("aria-expanded","true");
+  pop.querySelector("h3").textContent = d.title;
+  pop.querySelector(".when").textContent = `${LABELS[d.type]} · ${fmt(d.start)} – ${fmt(d.end)}`;
+  pop.querySelector(".txt").textContent = d.text;
+  if (d.img){ pimg.hidden = false; pimg.src = d.img; pimg.alt = d.title; pimg.onerror = () => pimg.hidden = true; }
+  else pimg.hidden = true;
+  place(ev && ev.clientX ? ev.clientX : null, b);
+  pop.classList.add("on");
+}
+function place(x,b){
+  if (innerWidth <= 640) return;               /* bottom sheet via CSS */
+  const r = b.getBoundingClientRect(), w = Math.min(320, innerWidth-24), h = pop.offsetHeight || 260;
+  let left = (x ?? r.left + r.width/2) - w/2;
+  left = Math.max(12, Math.min(left, innerWidth - w - 12));
+  let top = r.top - h - 8; if (top < 70) top = r.bottom + 8;
+  pop.style.left = left+"px"; pop.style.top = top+"px";
+}
+function hide(){
+  if (current) current.setAttribute("aria-expanded","false");
+  current = null; pop.classList.remove("on");
+}
+pop.querySelector(".close").addEventListener("click", hide);
+document.addEventListener("keydown", e => { if (e.key==="Escape") hide(); });
+document.addEventListener("pointerdown", e => { if (current && !pop.contains(e.target) && !e.target.closest(".node")) hide(); });
+addEventListener("scroll", () => { if (innerWidth>640) hide(); }, {passive:true});
+$("#yr").textContent = now.getFullYear();
+</script>
 </body>
 </html>
-
-<script src="lang.js"></script>
-<script>
-  let currentLang = 'it';
-  function toggleLanguage(switchElem) {
-    currentLang = switchElem.checked ? 'en' : 'it';
-    document.getElementById('lang-label').textContent = currentLang.toUpperCase();
-    applyTranslations(currentLang);
-    localStorage.setItem('lang', currentLang); // persist language across pages
-  }
-
-  // Load language on page load
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem('lang') || 'it';
-    currentLang = savedLang;
-    document.getElementById('lang-toggle').checked = savedLang === 'en';
-    document.getElementById('lang-label').textContent = savedLang.toUpperCase();
-    applyTranslations(savedLang);
-  });
-</script>
-
